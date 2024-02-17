@@ -26,14 +26,8 @@ const SignupCard = () => {
             <label htmlFor="confirmPassword" className="block text-gray-700">Confirm Password</label>
             <input type="password" id="confirmPassword" name="confirmPassword" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none" />
           </div>
-          <div className="mb-4">
-            <label htmlFor="phoneNumber" className="block text-gray-700">Phone Number</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none" />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="dob" className="block text-gray-700">Date of Birth</label>
-            <input type="date" id="dob" name="dob" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:outline-none" />
-          </div>
+        
+          
           <button type="submit" className="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-300">Sign Up</button>
         </form>
       </div>

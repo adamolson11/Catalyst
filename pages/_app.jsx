@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { initializeApp, getApp } from 'firebase/app'; // Import initializeApp and getApp functions from Firebase
-import { getAuth } from 'firebase/auth'; // Import getAuth function from Firebase Authentication
-import '../styles/globals.css';
+import { useEffect, useState } from 'react';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import MyAppContext from '../contexts/MyAppContext'; // Import the context for MyApp
 
 // Your Firebase project configuration
 const firebaseConfig = {
@@ -14,19 +14,20 @@ const firebaseConfig = {
 };
 
 function MyApp({ Component, pageProps }) {
-  // Initialize Firebase when the component mounts
+  const [auth, setAuth] = useState(null);
+
   useEffect(() => {
-    // Check if the Firebase app already exists
-    if (!getApp().length) {
-      const app = initializeApp(firebaseConfig);
-      // Optionally, initialize other Firebase services here if needed
-      // For example, if you're using Firebase Authentication:
-      const auth = getAuth(app);
-    }
+    // Initialize Firebase app and authentication
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    setAuth(auth);
   }, []);
 
-  // This effect runs only once when the component mounts
-  return <Component {...pageProps} />;
+  return (
+    <MyAppContext.Provider value={{ auth }}> {/* Provide auth context */}
+      <Component {...pageProps} />
+    </MyAppContext.Provider>
+  );
 }
 
 export default MyApp;
