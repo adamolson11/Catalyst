@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import SignupCard from '../components/SignupCard'; // Import the SignupCard component
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth'; // Import createUserWithEmailAndPassword function from Firebase authentication
- 
+import Typewriter from 'react-typewriter-effect'; // Import the Typewriter component
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -34,7 +34,11 @@ const Signup = () => {
         </video>
         <div className="absolute inset-0 flex items-center justify-center text-white">
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-4"> "A journey of a thousand miles begins with a single step"</h1>
+            <h1 className="text-3xl font-bold mb-4">
+              <Typewriter
+                text="A journey of a thousand miles begins with a single step" // Provide the text prop here
+              />
+            </h1>
             <SignupCard email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleSignup={handleSignup} />
           </div>
         </div>
