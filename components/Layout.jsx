@@ -4,7 +4,7 @@ import React from 'react';
 
 const Layout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen bg-blue-500">
+    <div className="flex flex-col min-h-screen">
       {/* Header */}
       <header className="bg-black">
         <nav className="flex justify-between items-center h-16 px-4">
