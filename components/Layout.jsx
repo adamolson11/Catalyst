@@ -19,8 +19,8 @@ const Layout = ({ children }) => {
             {/* Add more navigation links as needed */}
             <a href="/" className="text-white">Home</a>
             <a href="/about" className="text-white">About</a>
-            <a href="/about" className="text-white">Contact</a>
-            <a href="/about" className="text-white">Login</a>
+            <a href="/contact" className="text-white">Contact</a>
+            <a href="/login" className="text-white">Login</a>
           </div>
         </nav>
       </header>
